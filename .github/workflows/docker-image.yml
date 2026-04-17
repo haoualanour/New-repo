@@ -20,13 +20,13 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t my-dockerhub-nourhaouala/myapp:${{ github.sha }} .
-          docker tag my-dockerhub-nourhaouala/myapp:${{ github.sha }} my-dockerhub-nourhaouala/myapp:latest
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/myapp:${{ github.sha }} .
+          docker tag ${{ secrets.DOCKER_USERNAME }}/myapp:${{ github.sha }} ${{ secrets.DOCKER_USERNAME }}/myapp:latest
 
       - name: Push Docker image
         run: |
-          docker push my-dockerhub-nourhaouala/myapp:${{ github.sha }}
-          docker push my-dockerhub-nourhaouala/myapp:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/myapp:${{ github.sha }}
+          docker push ${{ secrets.DOCKER_USERNAME }}/myapp:latest
 
 
     
