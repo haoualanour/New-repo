@@ -22,4 +22,9 @@ jobs:
         run: |
           docker build -t my-dockerhub-nourhaouala/myapp:${{ github.sha }} .
           docker tag my-dockerhub-nourhaouala/myapp:${{ github.sha }} my-dockerhub-nourhaouala/myapp:latest
+
+      - name: Push Docker image
+        run: |
+          docker push my-dockerhub-nourhaouala/myapp:${{ github.sha }}
+          docker push my-dockerhub-nourhaouala/myapp:latest
     
