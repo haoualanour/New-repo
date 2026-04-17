@@ -622,5 +622,6 @@ class WatermarkApp(tk.Tk):
 
 # ══════════════════════════════════════════════════════════════════════════════
 if __name__ == "__main__":
+    print("version 2")
     app = WatermarkApp()
     app.mainloop()
