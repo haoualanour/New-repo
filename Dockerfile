@@ -1,3 +1,4 @@
 FROM ubuntu:latest
-ADD projet sec media.py projet sec media.py
-CMD python3 projet sec media.py
+ADD "projet sec media.py" "/app/projet sec media.py"
+CMD ["python3", "/app/projet sec media.py"]
+
