@@ -1,18 +1,13 @@
-name: Test CI
+name: TEST CI
+
+on:
+  push:
+    branches: [ "master" ]
+
 jobs:
-test:
-runs-on: ubuntu-latest
-steps:
-- name: Checkout code
-uses: actions/checkout@v3
+  test:
+    runs-on: ubuntu-latest
 
-- name: Set up Node.js (exemple si c&#39;est un projet Node.js)
-uses: actions/setup-node@v3
-with:
-node-version: &#39;16&#39;
-
-- name: Install dependencies
-run: npm install
-
-- name: Run tests
-run: npm test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
